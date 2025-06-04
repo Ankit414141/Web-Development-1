@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Password</title>
+</head>
+<body>
+    <h1 align="center">Change Password</h1>
+    <form action="reset_passwor.html" method="post">
+        <table border="1" cellpadding="10" align="center">
+            <tr>
+                <td><label for="current">Current Password:</label></td>
+                <td><input type="password" id="current" name="current" required></td>
+            </tr>
+            <tr>
+                <td><label for="new">New Password:</label></td>
+                <td><input type="password" id="new" name="new" required></td>
+            </tr>
+            <tr>
+                <td><label for="confirm">Confirm Password:</label></td>
+                <td><input type="password" id="confirm" name="confirm" required></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <button type="submit">Change Password</button>
+                    <button type="reset">Clear</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
