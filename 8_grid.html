@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        article {
+            background-color: aliceblue;
+            border: 1px solid black;
+            width: 80%;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 10% 32% 15% 15% 28%;
+            grid-template-rows: repeat(6, 50px);
+        }
+
+        div {
+            display: flex;
+            align-items: center;
+            padding-left: 10px;
+            border: 2px solid darkgray;
+
+        }
+
+        div:nth-of-type(-n+5) {
+            justify-content: end;
+            background-color: black;
+            color: azure;
+            
+            padding-right: 20px;
+            font-size: x-large;
+        }
+
+        div:nth-of-type(-n+2) {
+            justify-content:start;
+        }
+
+         div:nth-child(8),
+        div:nth-child(9),
+        div:nth-child(10),
+        div:nth-child(13),
+        div:nth-child(14),
+        div:nth-child(15),
+        div:nth-child(18),
+        div:nth-child(19),
+        div:nth-child(20),
+        div:nth-child(23),
+        div:nth-child(24),
+        div:nth-child(25),
+        div:nth-child(28),
+        div:nth-child(29),
+        div:nth-child(30)
+        {justify-content: end;
+            padding-right: 10px;
+
+        }
+        div:hover{
+            background-color:darksalmon;
+            color:blueviolet;
+            font-size: large;
+        }
+        h1{
+           
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>grid in css</h1>
+    <article>
+        <div>no</div>
+        <div>name</div>
+        <div>html</div>
+        <div>css</div>
+        <div>JavaScript</div>
+
+        <div>1</div>
+        <div>ankit</div>
+        <div>50</div>
+        <div>60</div>
+        <div>70</div>
+
+        <div>2</div>
+        <div>sarkar</div>
+        <div>60</div>
+        <div>80</div>
+        <div>90</div>
+
+        <div>3</div>
+        <div>ramu</div>
+        <div>40</div>
+        <div>60</div>
+        <div>70</div>
+
+        <div>4</div>
+        <div>siya</div>
+        <div>70</div>
+        <div>60</div>
+        <div>40</div>
+
+        <div>5</div>
+        <div>kiran</div>
+        <div>40</div>
+        <div>70</div>
+        <div>60</div>
+    </article>
+
+</body>
+
+</html>
