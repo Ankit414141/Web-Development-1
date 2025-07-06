@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ankit</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            letter-spacing: 1px;
+            box-sizing: border-box;
+        }
+
+        #site {
+            display: grid;
+            height: 100vh;
+        }
+
+        #mobile_menu {
+            display: none;
+        }
+
+        #site > div {
+            border: 1px solid black;
+        }
+
+        #heding {
+            display: flex;
+            grid-area: heding;
+            justify-content: space-between;
+            align-items: center;
+            background-color: burlywood;
+            color: blue;
+            padding: 10px;
+        }
+
+        #heding > span {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        #heding > ul {
+            display: flex;
+            list-style-type: none;
+            margin-right: 20px;
+            gap: 10px;
+        }
+
+        #heding > ul > li > a:link,
+        #heding > ul > li > a:visited {
+            display: inline-block;
+            width: 160px;
+            height: 40px;
+            padding: 10px 15px;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: #AF3E3E;
+            background-color: #EAEBD0;
+            border-top-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            text-align: center;
+        }
+
+        #heding > ul > li > a:hover {
+            font-size: large;
+            background-color: #fff;
+            border-top-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+            border-top-right-radius: 20px;
+            border-bottom-left-radius: 20px;
+        }
+
+        #Navigation {
+            grid-area: Navigation;
+        }
+
+        #main {
+            grid-area: main;
+        }
+
+        #sidebar {
+            grid-area: sidebar;
+        }
+
+        #footer {
+            grid-area: footer;
+        }
+
+        @media (min-width: 320px) and (max-width: 767px) {
+            #site {
+                grid-template-columns: 100%;
+                grid-template-rows: 60px 50px auto auto 50px;
+                grid-template-areas:
+                    "heding"
+                    "Navigation"
+                    "main"
+                    "sidebar"
+                    "footer";
+                overflow-y: auto;
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 1024px) {
+            /* Add layout for tablets here if needed */
+        }
+
+        @media (min-width: 1025px) and (max-width: 1280px) {
+            #site {
+                grid-template-columns: 30% 70%;
+                grid-template-rows: 50px auto auto 50px;
+                grid-template-areas:
+                    "heding heding"
+                    "Navigation main"
+                    "Navigation sidebar"
+                    "footer footer";
+            }
+        }
+
+        @media (min-width: 1281px) {
+            #site {
+                grid-template-columns: 20% 60% 20%;
+                grid-template-rows: 100px auto 50px;
+                grid-template-areas:
+                    "heding heding heding"
+                    "Navigation main sidebar"
+                    "footer footer footer";
+            }
+        }
+
+        @media (max-width: 1150px) {
+            #desktop-menu {
+                display: none !important;
+            }
+
+            #mobile_menu {
+                display: block !important;
+                margin-right: 10px;
+            }
+        }
+
+        #mobile_menu_div {
+            display: none;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            background-color: antiquewhite;
+            width: 100%;
+        }
+
+        #mobile_menu_div > ul {
+            list-style: none;
+            padding: 10px;
+            line-height: 150%;
+        }
+
+        #mobile_menu_div > ul > li > a {
+            text-decoration: none;
+            color: #AF3E3E;
+            display: block;
+            padding: 8px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="site">
+        <div id="heding">
+            <span>
+                <img src="img/icon.png" alt="site icon" />
+                <h2>universal</h2>
+            </span>
+            <ul id="desktop-menu">
+                <li><a href="1_basic.html">Home</a></li>
+                <li><a href="2_basic.html">About us</a></li>
+                <li><a href="3_selectors.html">Products</a></li>
+                <li><a href="4_selectors.html">Services</a></li>
+                <li><a href="5_inline_css.html">Contact us</a></li>
+            </ul>
+            <img id="mobile_menu" src="img/playicon.png" alt="menu icon" onclick="menu_button_click();" />
+        </div>
+        <div id="Navigation">Navigation</div>
+        <div id="main">Main Content</div>
+        <div id="sidebar">Sidebar</div>
+        <div id="footer">Footer</div>
+    </div>
+
+    <div id="mobile_menu_div">
+        <ul>
+            <li><a href="1_basic.html">Home</a></li>
+            <li><a href="2_basic.html">About us</a></li>
+            <li><a href="3_selectors.html">Products</a></li>
+            <li><a href="4_selectors.html">Services</a></li>
+            <li><a href="5_inline_css.html">Contact us</a></li>
+        </ul>
+    </div>
+
+    <script>
+        var ismenuvisible = false;
+
+        function menu_button_click() {
+            var menuDiv = document.getElementById("mobile_menu_div");
+            if (ismenuvisible) {
+                menuDiv.style.display = "none";
+                ismenuvisible = false;
+            } else {
+                menuDiv.style.display = "block";
+                ismenuvisible = true;
+            }
+        }
+    </script>
+</body>
+
+</html>
