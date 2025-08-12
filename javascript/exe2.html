@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Program</title>
+</head>
+<body>
+    <h1>Language Message</h1>
+
+    <button type="button" onclick="showMessage()">Click Me</button>
+
+    <script>
+        function showMessage() {
+            var lang = prompt("Enter language: gujarati / hindi / tamil / marathi / punjabi");
+
+            if (lang == "gujarati") alert("નમસ્તે! આપનું સ્વાગત છે.");
+            else if (lang == "hindi") alert("नमस्ते! आपका स्वागत है।");
+            else if (lang == "tamil") alert("வணக்கம்! உங்கள் வருகைக்கு நன்றி.");
+            else if (lang == "marathi") alert("नमस्कार! तुमचे स्वागत आहे.");
+            else if (lang == "punjabi") alert("ਸਤ ਸ੍ਰੀ ਅਕਾਲ! ਤੁਹਾਡਾ ਸਵਾਗਤ ਹੈ।");
+            else alert("Language not found.");
+        }
+    </script>
+</body>
+</html>
