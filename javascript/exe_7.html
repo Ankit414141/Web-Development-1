@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Battle – Player vs Computer</title>
+    <style>
+        body {font-family: Arial, sans-serif; margin: 20px; }
+        #log {white-space: pre-line; border: 1px solid #ccc; padding: 10px; height: 210px; overflow-y: auto;}
+        button {margin-top: 12px; padding: 6px 14px;}
+    </style>
+</head>
+<body>
+    <h1>Number Battle</h1>
+    <p>Type a whole number from <b>1 to 100</b> and press Play.  
+        Whoever is closer to the random target number scores a point.  
+        First to reach <b>3</b> points wins.</p>
+
+    <input id="playerInput" type="number" min="1" max="100" placeholder="Your number…">
+    <button id="playBtn">Play</button>
+    <button id="resetBtn">Reset</button>
+
+    <h3>Scoreboard</h3>
+    <p>Player <span id="playerScore">0</span> : Computer <span id="cpuScore">0</span></p>
+
+    <h3>Game Log</h3>
+    <div id="log"></div>
+
+    <script>
+    // =================  GAME OBJECT  =================
+    var NumberBattle = {
+        // state
+        playerScore: 0,
+        cpuScore: 0,
+        winningScore: 3,
+
+        // utilities
+        randomInt: function(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        },
+
+        // run one round
+        playRound: function(playerChoice) {
+            var target  = this.randomInt(1, 100);
+            var cpuChoice = this.randomInt(1, 100);
+
+            var playerDiff = Math.abs(target - playerChoice);
+            var cpuDiff    = Math.abs(target - cpuChoice);
+
+            var roundMsg =
+                "Target = " + target + "\n" +
+                "You chose " + playerChoice + " (Δ=" + playerDiff + ")\n" +
+                "CPU chose " + cpuChoice + " (Δ=" + cpuDiff + ")\n";
+
+            if (playerDiff < cpuDiff) {
+                this.playerScore++;
+                roundMsg += "🎉 You win the round!\n";
+            } else if (cpuDiff < playerDiff) {
+                this.cpuScore++;
+                roundMsg += "🤖 CPU wins the round.\n";
+            } else {
+                roundMsg += "➗ It’s a tie – no points.\n";
+            }
+            this.updateDisplay(roundMsg);
+            this.checkVictory();
+        },
+
+        // update DOM
+        updateDisplay: function(msg) {
+            document.getElementById("playerScore").textContent = this.playerScore;
+            document.getElementById("cpuScore").textContent    = this.cpuScore;
+
+            var logBox = document.getElementById("log");
+            logBox.textContent = msg + "\n" + logBox.textContent;
+        },
+
+        // check for match winner
+        checkVictory: function() {
+            if (this.playerScore >= this.winningScore || this.cpuScore >= this.winningScore) {
+                var winner = this.playerScore > this.cpuScore ? "You" : "CPU";
+                alert(winner + " win the match!");
+                this.resetGame();
+            }
+        },
+
+        // reset everything
+        resetGame: function() {
+            this.playerScore = 0;
+            this.cpuScore    = 0;
+            document.getElementById("log").textContent = "";
+            this.updateDisplay("Game reset.\n");
+        }
+    };
+    // =============  EVENT HANDLERS  =============
+    document.getElementById("playBtn").addEventListener("click", function () {
+        var val = parseInt(document.getElementById("playerInput").value, 10);
+        if (Number.isInteger(val) && val >= 1 && val <= 100) {
+            NumberBattle.playRound(val);
+            document.getElementById("playerInput").value = "";
+        } else {
+            alert("Enter a whole number between 1 and 100");
+        }
+    });
+
+    document.getElementById("resetBtn").addEventListener("click", function () {
+        NumberBattle.resetGame();
+    });
+
+    // initial message
+    NumberBattle.updateDisplay("New match – first to 3 wins!\n");
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Object using 1st method</h1>
+    <b>use console (ctrl+shift+k)</b>
+    <script>
+        //create object 
+        var CreditCard = {
+            //property/state
+            cardHolder: "lata kher",
+            cardNumber: "1234-5678-9012-3456",
+            expirationDate: "12/2026",
+            cvv: "123",
+            display: function()
+            {
+                console.log("Card Holder =" + this.cardHolder);
+                console.log("Card Number =" + this.cardNumber);
+                console.log("Expiration Date =" + this.expirationDate);
+                console.log("CVV =" + this.cvv);
+            }
+            
+        };
+        //use functions of object
+        CreditCard.display();
+        CreditCard.cardHolder = "ravi bheda";
+        CreditCard.cardNumber = "9876-5432-1098-7654";
+        CreditCard.expirationDate = "05/2025";
+        CreditCard.cvv = "456";
+        CreditCard.display();
+        CreditCard.cardHolder = "davdaat vyas";
+        CreditCard.cardNumber = "1111-2222-3333-4444";
+        CreditCard.expirationDate = "08/2027";
+        CreditCard.cvv = "789";
+        CreditCard.display();
+        CreditCard.cardHolder = "dabhi sahil";
+        CreditCard.cardNumber = "5555-6666-7777-8888";
+        CreditCard.expirationDate = "03/2028";
+        CreditCard.cvv = "012";
+        CreditCard.display();
+        CreditCard.cardHolder = "anit patel";
+        CreditCard.cardNumber = "9999-0000-1111-2222";
+        CreditCard.expirationDate = "11/2029";
+        CreditCard.cvv = "345";
+        CreditCard.display();
+    </script>
+</body>
+</html>

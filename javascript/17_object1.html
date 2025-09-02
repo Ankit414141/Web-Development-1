@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Object using 1st method</h1>
+    <b>use console (ctrl+shift+k)</b>
+    <script>
+        //create object 
+        var MyMath = {
+            //property/state
+            num1:10,
+            num2:3,
+            add: function()
+            {
+                let result = this.num1 + this.num2;
+                console.log("Addition =" + result);
+            },
+            sub: function()
+            {
+                let result = this.num1 - this.num2;
+                console.log("subtraction =" + result);
+            },
+            mul : function()
+            {
+                let result = this.num1 * this.num2;
+                console.log("multiplication =" + result);
+            },
+            div : function()
+            {
+                let result = this.num1 / this.num2;
+                console.log("division =" + result);
+            },
+            display: function()
+            {
+                console.log(this.num1,this.num2);
+            }
+            //add function sub, mul, div
+        };
+
+        //use functions of object
+        MyMath.add();
+        MyMath.display();
+
+        MyMath.sub();
+        MyMath.display();
+
+        MyMath.mul();
+        MyMath.display();
+
+        MyMath.div();
+        MyMath.display();
+        
+
+        
+    </script>
+</body>
+</html>

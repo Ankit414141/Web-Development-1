@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>2nd technique to create object</h1>
+    <table border="1" width="80%" cellpadding="10">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Genre</th>
+                <th>Duration (minutes)</th>
+                <th>Star Cast</th>
+                <th>Ticket Price (INR)</th>
+            </tr>
+        </thead>
+        <tbody id="movies"></tbody>
+    </table>
+    <script>
+        var Movie = new Object({
+            name:'',
+            genre:'',
+            duration:0,x    
+            starCast:'',
+            ticketPrice:0,
+            display: function(){
+                document.getElementById('movies').innerHTML += `<tr>
+                    <td>${this.name}</td>
+                    <td>${this.genre}</td>
+                    <td>${this.duration}</td>
+                    <td>${this.starCast}</td>
+                    <td>${this.ticketPrice}</td>
+                    </tr>`;
+            }
+        });
+        //create object variable
+        var m1 = Movie;
+        m1.name = "Sholay";
+        m1.genre = "Action";
+        m1.duration = 204;
+        m1.starCast = "Amitabh Bachchan, Dharmendra, Hema Malini";
+        m1.ticketPrice = 200;
+        m1.display();
+
+        var m2 = Movie;
+        m2.name = "Dilwale Dulhania Le Jayenge";
+        m2.genre = "Romance";
+        m2.duration = 189;
+        m2.starCast = "Shah Rukh Khan, Kajol";
+        m2.ticketPrice = 150;
+        m2.display();
+
+        var m3 = Movie;
+        m3.name = "3 Idiots";
+        m3.genre = "Comedy/Drama";
+        m3.duration = 170;
+        m3.starCast = "Aamir Khan, Kareena Kapoor, R. Madhavan";
+        m3.ticketPrice = 250;
+        m3.display();
+
+        var m4 = Movie;
+        m4.name = "Dangal";
+        m4.genre = "Sports/Drama";
+        m4.duration = 161;
+        m4.starCast = "Aamir Khan, Fatima Sana Shaikh, Sanya Malhotra";
+        m4.ticketPrice = 300;
+        m4.display();
+
+        var m5 = Movie;
+        m5.name = "PK";
+        m5.genre = "Comedy/Drama";
+        m5.duration = 153;
+        m5.starCast = "Aamir Khan, Anushka Sharma, Sushant Singh Rajput";
+        m5.ticketPrice = 250;
+        m5.display();
+
+        var m6 = Movie;
+        m6.name = "Lagaan";
+        m6.genre = "Drama/Sports";
+        m6.duration = 224;
+        m6.starCast = "Aamir Khan, Gracy Singh, Rachel Shelley";
+        m6.ticketPrice = 200;
+        m6.display();
+
+        var m7 = Movie;
+        m7.name = "Taare Zameen Par";
+        m7.genre = "Drama";
+        m7.duration = 165;
+        m7.starCast = "Aamir Khan, Darsheel Safary, Tisca Chopra";
+        m7.ticketPrice = 180;
+        m7.display();
+
+        var m8 = Movie;
+        m8.name = "Bajrangi Bhaijaan";
+        m8.genre = "Comedy/Drama";
+        m8.duration = 163;
+        m8.starCast = "Salman Khan, Harshaali Malhotra, Kareena Kapoor";
+        m8.ticketPrice = 280;
+        m8.display();
+
+        var m9 = Movie;
+        m9.name = "Andhadhun";
+        m9.genre = "Thriller";
+        m9.duration = 139;
+        m9.starCast = "Ayushmann Khurrana, Tabu, Radhika Apte";
+        m9.ticketPrice = 220;
+        m9.display();
+
+        var m10 = Movie;
+        m10.name = "Queen";
+        m10.genre = "Comedy/Drama";
+        m10.duration = 146;
+        m10.starCast = "Kangana Ranaut, Rajkummar Rao, Lisa Haydon";
+        m10.ticketPrice = 200;
+        m10.display();
+    </script>
+</body>
+</html>
