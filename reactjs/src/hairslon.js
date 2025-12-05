@@ -2,7 +2,7 @@
 import React from "react";
 
 
-// Navbar ka ek item
+// Navbar 
 function NavItem({ href, label }) {
   return (
     <li className="nav-item">
@@ -13,7 +13,7 @@ function NavItem({ href, label }) {
   );
 }
 
-// About section ka stat card
+// About section
 function StatCard({ value, text }) {
   return (
     <div className="col-6 mb-3">
@@ -45,7 +45,7 @@ function ServiceCard({ title, desc, points, footer }) {
   );
 }
 
-
+// Pricing table ka ek row
 function PricingRow({ service, details, price }) {
   return (
     <tr>
@@ -136,7 +136,7 @@ const HeroSection = () => (
             <p className="mb-1 text-center fw-bold">Walk-ins welcome</p>
             <p className="mb-3 text-center">But appointments get priority</p>
             <p className="text-center mb-0">
-               Call / WhatsApp: <strong>+91 98765 12345</strong>
+              📞 Call / WhatsApp: <strong>+91 98765 12345</strong>
             </p>
           </div>
         </div>
