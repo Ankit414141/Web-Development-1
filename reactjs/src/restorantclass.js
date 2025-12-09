@@ -54,7 +54,7 @@ class DinningTable extends React.Component
 
                     <div className="card-body">
 
-                        {/* Thali */}
+                    
                         <button 
                             type="button" 
                             className="btn btn-danger w-100" 
@@ -63,7 +63,7 @@ class DinningTable extends React.Component
                             Thali - <span className="badge bg-white text-primary">{this.state.thali}</span>
                         </button>
 
-                        {/* Roti & Chaas */}
+                        
                         <div className="row mt-2">
                             <div className="col-6">
                                 <button 
@@ -86,7 +86,7 @@ class DinningTable extends React.Component
                             </div>
                         </div>
 
-                        {/* Papad & Sweet */}
+                    
                         <div className="row mt-2">
                             <div className="col-6">
                                 <button 
